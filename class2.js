@@ -62,7 +62,14 @@ const filteredNames = names.filter((name, index) => {
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const evenNum = numbers.filter((num)=> {
-    return num % 2 === 0
+    return num % 2 !== 0
 })
 
-console.log(evenNum);
+// console.log(evenNum);
+
+// git init (run first time on new proj)
+// git add . (ruun everytime)
+// git commit -m "class 2 filter method done"
+// git branch -M main
+// git remote add origin https://github.com/bqwebclass/nodejs-class.git
+// git push -u origin main
