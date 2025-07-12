@@ -73,3 +73,34 @@ const evenNum = numbers.filter((num)=> {
 // git branch -M main
 // git remote add origin https://github.com/bqwebclass/nodejs-class.git
 // git push -u origin main
+
+const products = [
+    { title: 'Board Marker', price: 100, },
+    { title: 'Mobile Cover', price: 300, },
+    { title: 'Fan', price: 5000, },
+    { title: 'Keyboard', price: 700, },
+    { title: 'Mouse', price: 740, },
+    { title: 'prod1', price: 80, },
+]
+
+// .slice, .includes, .map, .filter, .find
+const newProducts = products.map((prod) => {
+    // console.log(prod);
+    if(prod.price < 700){
+        return { ...prod, dc: 100 }
+    }
+    else {
+        return { ...prod, dc: 50 }
+    }
+    
+})
+
+console.log(newProducts);
+
+const filterProds = products.filter((prod) => {
+    // console.log(prod.price);
+    return prod.price <= 700;
+})
+
+// console.log(filterProds);
+
