@@ -1,0 +1,24 @@
+node -v
+npm -v (node package manager)
+
+// node initialized
+npm init -y
+
+
+***************************
+JavaScript -> syncrounus & single thread
+Node JS -> Asyncrounus & non blocking & single thread
+        -> JS code can be run outside the browser
+        -> used to create Server 
+
+Socket -> Real time communication
+
+
+// dev dependency
+package.json -> dependency record with version
+package-lock.json -> dependency record with exact version
+
+// npm install express
+
+// nodemon -> auto restart server on every changes
+// npm i nodemon --save-dev
