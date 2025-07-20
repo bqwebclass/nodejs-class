@@ -1,0 +1,9 @@
+[
+  { "id": 1, "name": "Board Marker", "price": 100, "dc": 50 },
+  { "id": 10, "name": "Mobile Cover", "price": 400, "dc": 50 },
+  { "id": 111, "name": "Fan", "price": 10000, "dc": 150 },
+  { "id": 127, "name": "LED", "price": 12000, "dc": 400 },
+  { "id": 172, "name": "Laptop", "price": 42100, "dc": 500 },
+  { "name": "My New Prod 1", "price": 4000, "dc": 100, "id": 890 },
+  { "name": "Tea Cup", "price": 400, "dc": 40, "id": 8891 }
+]
