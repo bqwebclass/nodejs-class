@@ -6,12 +6,12 @@ const app = express();
 app.use(express.json()) // parse / convert by using express
 
 const STUDENTS = [
-    { name: 'Bilal Ali', age: 20, rollNum: 201 },
-    { name: 'Osama', age: 24, rollNum: 202 },
-    { name: 'Ali Muhammad', age: 27, rollNum: 203 },
-    { name: 'Hussain Shah', age: 40, rollNum: 204 },
-    { name: 'Shahzaib', age: 51, rollNum: 205 },
-    { name: 'Bilal Farooq', age: 25, rollNum: 206 },
+    { id: 109, name: 'Bilal Ali', age: 20, rollNum: 201 },
+    { id: 110, name: 'Osama', age: 24, rollNum: 202 },
+    { id: 111, name: 'Ali Muhammad', age: 27, rollNum: 203 },
+    { id: 112, name: 'Hussain Shah', age: 40, rollNum: 204 },
+    { id: 113, name: 'Shahzaib', age: 51, rollNum: 205 },
+    { id: 114, name: 'Bilal Farooq', age: 25, rollNum: 206 },
 ]
 
 app.get("/student", (req, res)=>{
@@ -54,9 +54,24 @@ app.post("/student", (req, res)=> {
     console.log(req.body);
     STUDENTS.push(req.body);
     res.send({ 
-        message: 'This is Test Route for Student', 
-        success: true, 
-        data: STUDENTS, 
+        message: 'This is POST Route for Student',
+        data: STUDENTS,
+    });
+})       
+
+app.patch("/student/:id", (req, res)=> {
+    console.log(req.params.id);
+    const id = Number(req.params.id);
+    console.log(req.body);
+    const updatedStudents = STUDENTS.map((std)=>{
+        if(std.id === id){
+            return { ...std, ...req.body, }
+        }
+        return std;
+    })
+    res.send({ 
+        message: 'This is POST Route for Student',
+        data: updatedStudents,
     });
 })       
 

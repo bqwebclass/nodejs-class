@@ -1,0 +1,6 @@
+node_modules
+# /class1-node/node_modules
+# class2-node/node_modules
+# class3-node/node_modules
+# class4-node/node_modules
+*/node_modules

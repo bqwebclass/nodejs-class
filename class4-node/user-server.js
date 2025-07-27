@@ -4,6 +4,7 @@ const bcrypt = require('bcryptjs');
 const User = require("./models/User");
 const MONGODB_URI = `mongodb://localhost:27017/BQ-MongoStart`;
 
+const hasedVal = await bcrypt.hash("acacssacnn", 10)
 const app = express();
 app.use(express.json()) // parse your data 
 
@@ -17,9 +18,9 @@ mongoose.connect(MONGODB_URI)
 app.post("/api/user", async (req, res) => {
     try {
         const body = req.body;
-        const password = await bcrypt.hash(body.password, 10);
+        const hashedPassword = await bcrypt.hash(body.password, 10);
         console.log(body);
-        const user = new User({ ...body, password: password });
+        const user = new User({ ...body, password: hashedPassword });
         await user.save();
 
         return res.send({ data: user, success: true, })
