@@ -1,5 +1,8 @@
 // schema
 // model (query run)
+// https://mongoosejs.com/docs/schematypes.html
+// https://mongoosejs.com/docs/queries.html
+
 const mongoose = require('mongoose');
 
 const productSchema = mongoose.Schema({
