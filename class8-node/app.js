@@ -15,6 +15,7 @@ app.use(logReqBody)
 
 // Router Middleware
 app.use("/api/v1", authRouter)
+app.use("/api/v1/course", authMiddleware, roleChecking(["admin", "teacher"]), authRouter)
 app.use("/api/v1", authMiddleware, roleChecking("admin"), adminRouter)
 // app.use("/api/v1", authMiddleware, roleChecking("teacher"), userRouter)
 // app.use("/api/v1", authMiddleware, roleChecking("student"), userRouter)
@@ -24,3 +25,11 @@ const PORT = process.env.PORT || 3002
 app.listen(PORT, () => {
     console.log(`Server in Running or http://localhost:${PORT}`);
 })
+
+// Course CRUD (Admin & Teacher)
+// Class CRUD (ADMIN)
+// route & controller -> student assign class
+
+// body
+// { classId: 'sacsancsan', userId: "ajcnjsancnsa" }
+

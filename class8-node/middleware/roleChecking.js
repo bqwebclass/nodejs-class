@@ -1,6 +1,6 @@
 
-const roleChecking = (role) => (req, res, next) => {
-    if(req.userRole != role){
+const roleChecking = (role=[]) => (req, res, next) => {
+    if(role.includes(req.userRole)){
         return res.status(400).send({ message: "Access Denied", });
     }
     next();
