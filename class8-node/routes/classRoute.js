@@ -1,12 +1,14 @@
 
 const express = require("express");
-const { getAllClasses } = require("../controllers/classController");
+const { createClassController, getAllClassesController, updateClassController, deleteClassController, getClassByIdController } = require("../controllers/classController");
 const router = express.Router();
+const roleChecking = require("../middleware/roleChecking");
 
-router.get("/", getAllClasses)
-router.post("/", )
-router.put("/:id", )
-router.delete("/:id", )
+router.get("/", getAllClassesController)
+router.get("/:id", getClassByIdController)
+router.post("/", roleChecking(["admin"]), createClassController)
+router.put("/:classId", roleChecking(["admin"]), updateClassController)
+router.delete("/:id", roleChecking(["admin"]), deleteClassController)
 
 
 module.exports = router
