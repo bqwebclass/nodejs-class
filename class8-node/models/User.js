@@ -17,6 +17,8 @@ const userSchema = mongoose.Schema({
     classId: { type: mongoose.Schema.Types.ObjectId, ref: 'Class' }, // if student
 });
 
+userSchema.index({ email: 1 });
+
 
 const User = mongoose.model("User", userSchema);
 
